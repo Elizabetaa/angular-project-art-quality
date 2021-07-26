@@ -1,0 +1,53 @@
+body {
+    background-color: lightgray;
+  }
+  
+  .books-content {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 200px;
+  }
+  .books-content h1 {
+    margin-bottom: 0;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  .book-sheet-description {
+    height: 400px;
+    margin: auto;
+    background: black;
+    overflow: hidden;
+    background: #c33764;
+    background: -webkit-linear-gradient(
+        rgba(112, 133, 156, 0.1),
+        rgba(189, 162, 171, 0.1)
+      ),
+      url("../../assets/book-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: lightgray;
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 2px;
+  }
+  .book-sheet-description p{
+    width: 55%;
+    margin: 50px;
+    margin-top: 30px;
+    font-size: 15px;
+  }
+  .book {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  
+  .book > .book-image , img{
+    width: 100%;
+  }

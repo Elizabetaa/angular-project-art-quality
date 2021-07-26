@@ -1,0 +1,72 @@
+.banner {
+  align-items: center;
+  width: 75%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.image-banner img {
+  border-radius: 400px;
+}
+
+.desc {
+  font-size: 40px;
+  flex-basis: 60%;
+  color: rgb(28 64 105);
+}
+
+.desc h1 {
+  margin: 0;
+}
+
+.desc button {
+  background-color: rgb(40, 81, 128);
+  color: white;
+  padding: 20px 65px;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 0px gray;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 105px auto;
+  padding: 100px 0;
+  background-color: rgb(40, 81, 128);
+  font-size: 25px;
+}
+
+.card {
+  text-align: center;
+  flex-basis: 20%;
+  color: white;
+}
+
+.card i {
+  font-size: 40px;
+  color: white;
+  border: 4px solid;
+  padding: 23px;
+  background-color: rgb(236, 32, 41);
+  border-radius: 66px;
+}
+
+.mtovation {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 150px;
+}
+
+.mtovation .image img {
+  width: 480px;
+}
+.mtovation .desc {
+  font-size: 25px;
+}

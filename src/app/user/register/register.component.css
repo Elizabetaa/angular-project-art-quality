@@ -1,0 +1,60 @@
+.register-form {
+    margin: auto;
+    width: 50%;
+    margin-top: 150px;
+    background-color: rgb(212 222 243);
+    display: flex;
+}
+.register {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+    padding: 0px 20px 30px 20px;
+}
+
+.register label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  position: relative;
+}
+
+.register input {
+  padding: 12px 35px;
+  font-size: 19px;
+  border: none;
+  border-bottom: 1px solid;
+  background-color: rgb(212 222 243);
+
+}
+
+.register i {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}
+
+.register-logo{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #285180;
+    color: white;
+    font-size: 30px;
+}
+.register-logo i{
+    font-size: 100px;
+}
+.submit-btn{
+  margin-top: 30px;
+  padding: 12px 13px;
+  width: 30%;
+  background-color: #285180;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 2px solid;
+}
