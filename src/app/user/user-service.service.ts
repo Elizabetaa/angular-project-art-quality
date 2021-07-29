@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { LocalStorage } from '../core/injection-token';
 import { IUser } from '../interfaces/user';
 
 @Injectable({
@@ -11,21 +12,27 @@ export class UserServiceService {
   get isLogged(): boolean{
     return !!this.user;
   }
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    @Inject(LocalStorage) private localStorage: Window['localStorage']) { 
+      try {
+        const localStorageUser = this.localStorage.getItem('<USER>') || 'ERROR';
+        this.user = JSON.parse(localStorageUser);
+      } catch {
+        this.user = undefined;
+      }
+    }
 
   login(email: string, password: string): void{
-    setTimeout(() => {
       this.user = {
         email,
         firstName: 'John',
         lastName: 'Doe'
       }
-    },1000)
+      this.localStorage.setItem('<USER>',JSON.stringify(this.user));
   }
 
   logout():void{
-    setTimeout(()=> {
       this.user = undefined;
-    },1000)
+      this.localStorage.removeItem('<USER>')
   }
 }
