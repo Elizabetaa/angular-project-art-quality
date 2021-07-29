@@ -11,11 +11,15 @@
             <li>
                 <a routerLink="/courses">Courses</a>
             </li>
-            <li>
+
+            <li *ngIf="!isLogged">
                 <a routerLink="/signIn">Sign In</a>
             </li>
-            <li>
+            <li *ngIf="!isLogged">
                 <a routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="isLogged">
+                <a (click) = "logout()">Logout</a>
             </li>
         </ul>
     </article>
