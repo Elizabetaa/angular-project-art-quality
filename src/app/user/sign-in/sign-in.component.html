@@ -2,16 +2,18 @@
     <section class="signIn-logo">
         <i class="far fa-user"></i>
     </section>
-    <form action="" class="signIn">
-        <label for=""> 
+    <form  class="signIn" #form="ngForm" (ngSubmit)="loginHandler(form)">
+        <label for="email"> 
             <i class="far fa-envelope-open"></i>
-            <input #email type="email" placeholder="Email">
+            <input #email type="email" name="email" placeholder="Email" ngModel  >
         </label>
-        <label for=""> 
+        <label for="password"> 
             <i class="fas fa-lock"></i>
-            <input #password type="password" placeholder="Password">
+            <input #password type="password" name="password" placeholder="Password" ngModel  > 
         </label>
-           <button class="submit-btn" (click)="login(email.value, password.value)">Submit</button>
+           <button class="submit-btn">Submit</button>
     </form>
 
 </section>
+
+<!--  (click)="login(email.value, password.value)" -->
