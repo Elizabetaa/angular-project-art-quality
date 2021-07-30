@@ -1,3 +1,9 @@
-<p>course works!</p>
+<div  *ngIf="course" >
+    <p> id: {{course.id}}</p>
+    <p> name :{{course.courseName}}</p>
+    <p>weeks :{{course.weeks}}</p>
+    <p> members: {{course.members}}</p>
+    <p> description: {{course.description}}</p>
+    <p>img: <img src="{{course.imageUrl}}" alt=""></p>
 
-<p></p>
+</div>

@@ -4,7 +4,7 @@
     background: black;
     overflow: hidden;
     background: #C33764; 
-    background: -webkit-linear-gradient(rgba(40, 81, 128, 0.9), rgba(195, 55, 100, 0.4)), url("../../assets/art-history-course-banner.jpg");
+    background: -webkit-linear-gradient(rgba(40, 81, 128, 0.9), rgba(195, 55, 100, 0.4)), url("../../../assets/art-history-course-banner.jpg");
   }
   
   .courses-banner h1{

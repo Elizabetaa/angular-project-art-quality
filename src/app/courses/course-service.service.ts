@@ -12,5 +12,9 @@ export class CourseServiceService {
   loadCourses(){
     return this.http.get<ICourse[]>(`http://localhost:8080/courses/all`);
   }
+
+  loadCourse(id: number){
+    return this.http.get<ICourse>(`http://localhost:8080/courses/${id}`)
+  }
   
 }
