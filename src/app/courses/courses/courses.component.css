@@ -50,4 +50,6 @@
   .course-desc p {
     color: gray;
   }
-  
+  .course-desc h1{
+    text-align: center;
+  }

@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesComponent } from './courses/courses/courses.component';
 import { BooksComponent } from './books/books.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserRoutingModule } from './user/user-routing.module';
 import { FormsModule } from '@angular/forms';
+import { CourseComponent } from './courses/course/course.component';
+import { CourseModule } from './courses/course.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     CoursesComponent,
     BooksComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     UserModule,
     UserRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CourseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

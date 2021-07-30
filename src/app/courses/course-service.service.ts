@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICourse } from '../interfaces/ICourse';
+import { ICourse } from '../shared/interfaces/ICourse';
 
 @Injectable({
   providedIn: 'root'

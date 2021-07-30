@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { LocalStorage } from '../core/injection-token';
-import { IUser } from '../interfaces/user';
+import { IUser } from '../shared/interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,6 @@ export class UserServiceService {
   login(email: string, password: string): void{
       this.user = {
         email,
-        firstName: 'John',
-        lastName: 'Doe'
       }
       this.localStorage.setItem('<USER>',JSON.stringify(this.user));
   }

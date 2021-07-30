@@ -3,6 +3,9 @@
         <i class="fab fa-pushed"></i>
         <h1> <a routerLink="/home">Art Quality</a></h1>
     </article>
+    <article class="welcome-message">
+        <a routerLink="/profile">Welcome {{email}}</a>
+    </article>
     <article class="menu">
         <ul>
             <li>
@@ -13,7 +16,7 @@
             </li>
 
             <li *ngIf="!isLogged">
-                <a routerLink="/signIn">Sign In</a>
+                <a routerLink="/login">Login</a>
             </li>
             <li *ngIf="!isLogged">
                 <a routerLink="/register">Register</a>
