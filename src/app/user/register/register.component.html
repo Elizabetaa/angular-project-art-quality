@@ -3,26 +3,26 @@
         <i class="fab fa-pushed"></i>
         <h1>Art Quality</h1>
     </section>
-    <form action="" class="register">
-        <label for=""> 
+    <form class="register" #form="ngForm" (ngSubmit)="registerHandler(form)" >
+        <label for="firstName"> 
             <i class="far fa-user"></i>
-            <input type="text" placeholder="First Name">
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" ngModel>
         </label>
-        <label for=""> 
+        <label for="lastName"> 
             <i class="far fa-user"></i>
-            <input type="text" placeholder="Last Name">
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" ngModel>
         </label>
-        <label for=""> 
+        <label for="email"> 
             <i class="far fa-envelope-open"></i>
-            <input type="email" placeholder="Email">
+            <input type="email" name="email" id="email" placeholder="Email" ngModel>
         </label>
-        <label for=""> 
+        <label for="password"> 
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
+            <input type="password" name="password"id="password"  placeholder="Password" ngModel>
         </label>
-        <label for=""> 
+        <label for="confirmPassword"> 
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Confirm Password">
+            <input type="password" name="confirmPassword" id="confirmPassword"  placeholder="Confirm Password" ngModel>
         </label>
         <button type="submit" class="submit-btn">Submit</button>
     </form>
