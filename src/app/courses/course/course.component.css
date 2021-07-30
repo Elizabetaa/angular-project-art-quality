@@ -1,0 +1,36 @@
+main{
+    padding-bottom: 200px;
+}
+.course{
+    background-color: lightgray;
+    margin-top: 0;
+    padding: 80px 200px;
+}
+
+.course-desc h1{
+    margin: 0;
+    font-size: 50px;
+    color: rgb(40, 81, 128);
+}
+.course-desc p{
+    font-size: 20px;
+}
+.enroll{
+    margin-top: 40px;
+    padding: 30px 20px;
+    font-size: 30px;
+    background-color: rgb(40, 81, 128);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.specialization{
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    font-size: 20px;
+}
+.specialization h2{
+    text-align: center;
+}

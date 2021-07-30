@@ -2,7 +2,8 @@
         <article class="desc">
             <h1>Learn Without Limits</h1>
             <p>Build skills with courses, certificates, and degrees online</p>
-            <button routerLink = "/register">Join for Free</button>
+            <button *ngIf="!isLogged" routerLink = "/register" >Join for Free</button>
+            <button *ngIf="isLogged" routerLink = "/courses" >Find your course</button>
         </article>
         <article class="image-banner">
             <img src="../../assets/banner.png" alt="">

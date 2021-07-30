@@ -22,7 +22,13 @@
                 <a routerLink="/register">Register</a>
             </li>
             <li *ngIf="isLogged">
-                <a href="" (click) = "logout()">Logout</a>
+                <a routerLink="/profile">Profile</a>
+            </li>
+            <li *ngIf="isLogged">
+                <a routerLink="/myCourses">My Courses</a>
+            </li>
+            <li *ngIf="isLogged">
+                <a href="" (click)="logout()">Logout</a>
             </li>
         </ul>
     </article>
