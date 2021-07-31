@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICourse } from 'src/app/shared/interfaces/ICourse';
+import { UserServiceService } from 'src/app/user/user-service.service';
 import { CourseServiceService } from '../course-service.service';
 
 @Component({
@@ -13,7 +15,10 @@ export class CourseComponent {
 
   constructor(
     private courseService: CourseServiceService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private userService: UserServiceService,
+    private http: HttpClient,
+    private router: Router,
   ) {
     this.fetchCourse();
   }
@@ -24,5 +29,15 @@ export class CourseComponent {
       .loadCourse(id)
       .subscribe((course) => (this.course = course));
   }
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
  
+  addCourseToUser(id: number):void{
+    // this.http.post(`http://localhost:8080/users/addCourse/${id}/${this.userService.user?.email}`);
+    console.log(this.userService.user?.email);
+    this.http.post(`http://localhost:8080/users/addCourse/${id}`, this.userService.user?.email).subscribe();
+    const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/profile';
+    this.router.navigate([redirectUrl]);
+  }
 }

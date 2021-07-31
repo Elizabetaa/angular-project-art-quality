@@ -6,7 +6,8 @@
             <p> {{course.members}} already enrolled</p>
             <p>Weeks: {{course.weeks}}</p>
         </article>
-        <button class="enroll" >Enroll for free</button>
+        <button class="enroll" *ngIf="isLogged" (click)="addCourseToUser(course.id)">Enroll for free</button>
+        <button class="enroll" *ngIf="!isLogged" routerLink="/login">Enroll for free</button>
     </section>
 
     <section class="specialization">
