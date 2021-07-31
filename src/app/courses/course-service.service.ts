@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICourse } from '../shared/interfaces/ICourse';
+import { UserServiceService } from '../user/user-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private userService: UserServiceService) { }
 
   loadCourses(){
     return this.http.get<ICourse[]>(`http://localhost:8080/courses/all`);
@@ -16,5 +18,7 @@ export class CourseServiceService {
   loadCourse(id: number){
     return this.http.get<ICourse>(`http://localhost:8080/courses/${id}`)
   }
-  
+  loadMyCourses(email: string){
+    return this.http.get<ICourse[]>(`http://localhost:8080/users/getMyCourses/${email}` );
+  }
 }

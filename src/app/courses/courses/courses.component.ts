@@ -8,13 +8,13 @@ import { CourseServiceService } from '../course-service.service';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent  {
-  corses:ICourse[] | undefined;
+  courses:ICourse[] | undefined;
 
   constructor(private courseService: CourseServiceService) { 
     this.fetchCourses();
   }
   fetchCourses(){
-    this.courseService.loadCourses().subscribe(courses => this.corses = courses);
+    this.courseService.loadCourses().subscribe(courses => this.courses = courses);
   }
 
 }

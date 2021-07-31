@@ -3,7 +3,7 @@
             <h1>Art History Courses</h1>
         </section>
         <section class="courses">
-            <a href=""  *ngFor="let course of corses" [routerLink]="['/courses',course.id]">
+            <a href=""  *ngFor="let course of courses" [routerLink]="['/courses',course.id]">
                 <section class="course">
                     <article class="course-image">
                         <img src={{course.imageUrl}} alt="">

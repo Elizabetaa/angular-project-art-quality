@@ -5,7 +5,6 @@ import { UserRoutingModule } from './user-routing.module';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { MyCoursesComponent } from './my-courses/my-courses.component';
 
 
 
@@ -14,7 +13,6 @@ import { MyCoursesComponent } from './my-courses/my-courses.component';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    MyCoursesComponent
   ],
   imports: [
     CommonModule,
