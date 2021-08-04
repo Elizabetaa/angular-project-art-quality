@@ -34,7 +34,6 @@ export class CourseComponent {
   }
  
   addCourseToUser(id: number):void{
-    console.log(this.userService.user?.email);
     this.http.post(`http://localhost:8080/users/addCourse/${id}`, this.userService.user?.email).subscribe();
     const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/myCourse';
     this.router.navigate([redirectUrl]);

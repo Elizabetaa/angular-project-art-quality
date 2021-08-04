@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServiceService } from './user/user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'art-quality-angular-project';
+  constructor(
+    private userService:UserServiceService,
+  ){
+    this.userService.getProfileInfo().subscribe({
+      error: () =>{
+       this.userService.user = null; 
+      }
+    })
+  }
+
 }

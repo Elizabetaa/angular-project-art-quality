@@ -9,33 +9,26 @@ import { NgForm } from '@angular/forms';
   providedIn: 'root',
 })
 export class UserServiceService {
-  user: IUser | undefined;
+  user: IUser | null | undefined = undefined;
 
   get isLogged(): boolean {
     return !!this.user;
   }
   constructor(
     private http: HttpClient,
-    @Inject(LocalStorage) private localStorage: Window['localStorage']
-  ) {
-    try {
-      const localStorageUser = this.localStorage.getItem('<USER>') || 'ERROR';
-      this.user = JSON.parse(localStorageUser);
-    } catch {
-      this.user = undefined;
-    }
-  }
+  ) {}
   login(userData: { email: string; password: string }) {
     return this.http
       .post<IUser>(
         `http://localhost:8080/users/login`,
         JSON.stringify(userData)
-      );
+      ).pipe(tap((user) => this.user = user ));
   }
 
-  logout(): void {
-    this.user = undefined;
-    this.localStorage.removeItem('<USER>');
+  logout() {
+    return this.http.post<IUser>(`http://localhost:8080/users/logout`, {}).pipe(
+      tap(() => this.user = null)
+    );
   }
   register(data: {
     firstName: string;
@@ -45,5 +38,10 @@ export class UserServiceService {
   })  {
     return this.http
       .post<IUser>(`http://localhost:8080/users/register`, JSON.stringify(data));
+  }
+  getProfileInfo() {
+    return this.http.get<IUser>(`http://localhost:8080/users/profile`).pipe(
+      tap((user) => this.user = user)
+    )
   }
 }
