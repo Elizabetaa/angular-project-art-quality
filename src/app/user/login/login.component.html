@@ -1,17 +1,34 @@
 <section class="signIn-form">
-    <section class="signIn-logo">
-        <i class="far fa-user"></i>
-    </section>
-    <form  class="signIn" #form="ngForm" (ngSubmit)="loginHandler(form)">
-        <label for="email"> 
-            <i class="far fa-envelope-open"></i>
-            <input #email type="email" name="email" placeholder="Email" ngModel  >
-        </label>
-        <label for="password"> 
-            <i class="fas fa-lock"></i>
-            <input #password type="password" name="password" placeholder="Password" ngModel  > 
-        </label>
-           <button class="submit-btn">Submit</button>
-    </form>
+  <section class="signIn-logo">
+    <i class="far fa-user"></i>
+  </section>
+  <form class="signIn" #form="ngForm" (ngSubmit)="loginHandler(form)">
+    <label for="email">
+      <i class="far fa-envelope-open"></i>
+      <input #email="ngModel" ngModel type="email" name="email" id="email" placeholder="Email" required email>
+    </label>
+    <ng-container *ngIf="email.touched">
+      <p *ngIf="email.errors?.required" class="error">
+        Email is required!
+      </p>
+      <p *ngIf="email.errors?.email" class="error">
+        Email is not valid!
+      </p>
+    </ng-container>
+    <label for="password">
+      <i class="fas fa-lock"></i>
+      <input #password="ngModel" ngModel type="password" name="password" placeholder="Password" id="password"
+        [minlength]="4" required>
+    </label>
+    <ng-container *ngIf="password.touched">
+      <p *ngIf="password.errors?.required" class="error">
+        Password is required!
+      </p>
+      <p *ngIf="password.errors?.minlength" class="error">
+        Password must be at least 4 characters!
+      </p>
+    </ng-container>
+    <button class="submit-btn">Submit</button>
+  </form>
 
 </section>

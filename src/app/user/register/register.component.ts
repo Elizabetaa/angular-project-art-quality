@@ -18,9 +18,15 @@ export class RegisterComponent {
 
   ) {}
 
-  registerHandler(form: NgForm) : void{
-    this.http.post(`http://localhost:8080/users/register`, JSON.stringify(form.value)).subscribe();
-    const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/login';
-    this.router.navigate([redirectUrl]);
+  registerHandler(form: NgForm): void {
+    if (form.invalid) { return; }
+    this.userService.register(form.value).subscribe({
+      next: () => {
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
   }
 }

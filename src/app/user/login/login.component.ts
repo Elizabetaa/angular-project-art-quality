@@ -17,22 +17,19 @@ export class LoginComponent {
     private http: HttpClient
   ) {}
 
-  // login(email: string, password: string): void {
-  //   this.userService.login(email, password);
-  //   const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/';
-  //   this.router.navigate([redirectUrl]);
-  // }
-
+  
   loginHandler(form: NgForm): void {
-    if (form.invalid) {
-      return;
-    }
-    this.userService.login(form.value.email, form.value.password);
-    const redirectUrl =
-      this.activatedRoute.snapshot.queryParams.redirectUrl || '/';
-    this.router.navigate([redirectUrl]);
-    this.http
-      .post(`http://localhost:8080/users/login`, JSON.stringify(form.value))
-      .subscribe();
+    if (form.invalid) { return; }
+    const { email, password } = form.value;
+    this.userService.login({ email, password }).subscribe({
+      next: () => {
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
+  
 }
+

@@ -1,20 +1,16 @@
- <main>
-        <section class="courses-banner">
-            <h1>Art History Courses</h1>
+<section class="courses-banner">
+    <h1>Art History Courses</h1>
+</section>
+<section class="courses">
+    <a href="" *ngFor="let course of courses" [routerLink]="['/courses',course.id]">
+        <section class="course">
+            <article class="course-image">
+                <img src={{course.imageUrl}} alt="">
+            </article>
+            <article class="course-desc">
+                <h1>{{course.courseName}}</h1>
+                <p>Weeks: {{course.weeks}}</p>
+            </article>
         </section>
-        <section class="courses">
-            <a href=""  *ngFor="let course of courses" [routerLink]="['/courses',course.id]">
-                <section class="course">
-                    <article class="course-image">
-                        <img src={{course.imageUrl}} alt="">
-                    </article>
-                    <article class="course-desc">
-                        <h1>{{course.courseName}}</h1>
-                        <p>Weeks: {{course.weeks}}</p>
-                    </article>
-                </section>
-            </a>
-        </section>
- </main>
-
-  
+    </a>
+</section>

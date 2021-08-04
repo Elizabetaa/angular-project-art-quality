@@ -3,7 +3,7 @@
         <i class="fab fa-pushed"></i>
         <h1> <a routerLink="/home">Art Quality</a></h1>
     </article>
-    <article class="welcome-message">
+    <article class="welcome-message" *ngIf="isLogged">
         <a routerLink="/profile">Welcome {{email}}</a>
     </article>
     <article class="menu">

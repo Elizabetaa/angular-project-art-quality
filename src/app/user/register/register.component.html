@@ -1,30 +1,64 @@
-<section class="register-form">
-    <section class="register-logo">
-        <i class="fab fa-pushed"></i>
-        <h1>Art Quality</h1>
+    <section class="register-form">
+        <section class="register-logo">
+            <i class="fab fa-pushed"></i>
+            <h1>Art Quality</h1>
+        </section>
+        <form class="register" #form="ngForm" (ngSubmit)="registerHandler(form)">
+            <label for="firstName">
+                <i class="far fa-user"></i>
+                <input #firstName="ngModel" ngModel ngModeltype="text" name="firstName" id="firstName"
+                    placeholder="First Name" [minlength]="3" required>
+            </label>
+            <ng-container *ngIf="firstName.touched">
+                <p *ngIf="firstName.errors?.required" class="error">
+                    First name is required!
+                </p>
+                <p *ngIf="firstName.errors?.minlength" class="error">
+                    First name must be at least 3 characters!
+                </p>
+            </ng-container>
+            <label for="lastName">
+                <i class="far fa-user"></i>
+                <input  #lastName="ngModel" ngModel type="text" name="lastName" id="lastName" placeholder="Last Name" ngModel  [minlength]="3" required>
+            </label>
+            <ng-container *ngIf="lastName.touched">
+                <p *ngIf="lastName.errors?.required" class="error">
+                    Last name is required!
+                </p>
+                <p *ngIf="lastName.errors?.minlength" class="error">
+                    Last name must be at least 3 characters!
+                </p>
+            </ng-container>
+           
+            <label for="email">
+                <i class="far fa-envelope-open"></i>
+                <input #email="ngModel" ngModel type="email" name="email" id="email" placeholder="Email" required email>
+            </label>
+            <ng-container *ngIf="email.touched">
+                <p *ngIf="email.errors?.required" class="error">
+                  Email is required!
+                </p>
+                <p *ngIf="email.errors?.email" class="error">
+                  Email is not valid!
+                </p>
+              </ng-container>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+                <input #password="ngModel" ngModel type="password" name="password" id="password" placeholder="Password"  [minlength]="4" required>
+            </label>
+            <ng-container *ngIf="password.touched">
+                <p *ngIf="password.errors?.required" class="error">
+                  Password is required!
+                </p>
+                <p *ngIf="password.errors?.minlength" class="error">
+                  Password must be at least 4 characters!
+                </p>
+              </ng-container>
+            <label for="confirmPassword"   >
+                <i class="fas fa-lock"></i>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" ngModel>
+            </label>
+            <button class="submit-btn">Submit</button>
+        </form> 
+    
     </section>
-    <form class="register" #form="ngForm" (ngSubmit)="registerHandler(form)" >
-        <label for="firstName"> 
-            <i class="far fa-user"></i>
-            <input type="text" name="firstName" id="firstName" placeholder="First Name" ngModel>
-        </label>
-        <label for="lastName"> 
-            <i class="far fa-user"></i>
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name" ngModel>
-        </label>
-        <label for="email"> 
-            <i class="far fa-envelope-open"></i>
-            <input type="email" name="email" id="email" placeholder="Email" ngModel>
-        </label>
-        <label for="password"> 
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password"id="password"  placeholder="Password" ngModel>
-        </label>
-        <label for="confirmPassword"> 
-            <i class="fas fa-lock"></i>
-            <input type="password" name="confirmPassword" id="confirmPassword"  placeholder="Confirm Password" ngModel>
-        </label>
-        <button type="submit" class="submit-btn">Submit</button>
-    </form>
-
-</section>

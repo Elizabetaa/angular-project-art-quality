@@ -25,13 +25,13 @@ import { CourseModule } from './courses/course.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     UserModule,
     UserRoutingModule,
     HttpClientModule,
     FormsModule,
-    CourseModule
+    CourseModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
