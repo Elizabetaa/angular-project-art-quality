@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { emailValidator } from 'src/app/shared/validators';
 import { UserServiceService } from '../user-service.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  emailValidator = emailValidator;
+
   constructor(
     private userService: UserServiceService,
     private activatedRoute: ActivatedRoute,

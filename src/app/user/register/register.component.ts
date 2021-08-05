@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+  
+import { Component, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { emailValidator, passwordDontMatch } from 'src/app/shared/validators';
 import { UserServiceService } from '../user-service.service';
 
 @Component({
@@ -9,18 +11,34 @@ import { UserServiceService } from '../user-service.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnDestroy{
+  emailValidator = emailValidator;
+  passwordDontMatch = passwordDontMatch;
+  killSubscription = new Subject();
+ 
+  form: FormGroup;
+
   constructor(
-    private userService: UserServiceService,
-    private activatedRoute: ActivatedRoute,
+    private fb: FormBuilder,
     private router: Router,
-    private http: HttpClient
+    private userService: UserServiceService
+  ) {
+    this.form = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(4)]],
+      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, emailValidator]],
+      tel: [''],
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      confirmPassword: ['', [Validators.required, passwordDontMatch(
+        () => this.form?.get('password'), this.killSubscription
+      )]]
+    });
+  }
+  
 
-  ) {}
-
-  registerHandler(form: NgForm): void {
-    if (form.invalid) { return; }
-    this.userService.register(form.value).subscribe({
+  registerHandler(): void {
+    if (this.form.invalid) { return; }
+    this.userService.register(this.form.value).subscribe({
       next: () => {
         this.router.navigate(['/login']);
       },
@@ -28,5 +46,9 @@ export class RegisterComponent {
         console.error(err);
       }
     })
+  }
+  ngOnDestroy(): void {
+    this.killSubscription.next();
+    this.killSubscription.complete();
   }
 }

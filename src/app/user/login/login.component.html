@@ -5,13 +5,13 @@
   <form class="signIn" #form="ngForm" (ngSubmit)="loginHandler(form)">
     <label for="email">
       <i class="far fa-envelope-open"></i>
-      <input #email="ngModel" ngModel type="email" name="email" id="email" placeholder="Email" required email>
+      <input #email="ngModel" ngModel [appCustomValidator] = "emailValidator" type="email" name="email" id="email" placeholder="Email" required email>
     </label>
     <ng-container *ngIf="email.touched">
       <p *ngIf="email.errors?.required" class="error">
         Email is required!
       </p>
-      <p *ngIf="email.errors?.email" class="error">
+      <p *ngIf="email.errors?.invalidEmail" class="error">
         Email is not valid!
       </p>
     </ng-container>
