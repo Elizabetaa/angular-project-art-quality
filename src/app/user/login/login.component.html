@@ -7,6 +7,11 @@
       <i class="far fa-envelope-open"></i>
       <input #email="ngModel" ngModel [appCustomValidator] = "emailValidator" type="email" name="email" id="email" placeholder="Email" required email>
     </label>
+    <ng-container *ngIf="notCorectInputs">
+      <p class="error">
+        Username or password is invalid!
+      </p>
+    </ng-container>
     <ng-container *ngIf="email.touched">
       <p *ngIf="email.errors?.required" class="error">
         Email is required!

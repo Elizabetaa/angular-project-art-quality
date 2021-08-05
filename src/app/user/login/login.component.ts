@@ -12,6 +12,7 @@ import { UserServiceService } from '../user-service.service';
 })
 export class LoginComponent {
   emailValidator = emailValidator;
+  notCorectInputs: boolean = false;
 
   constructor(
     private userService: UserServiceService,
@@ -20,19 +21,18 @@ export class LoginComponent {
     private http: HttpClient
   ) {}
 
-  
   loginHandler(form: NgForm): void {
-    if (form.invalid) { return; }
+    if (form.invalid) {
+      return;
+    }
     const { email, password } = form.value;
     this.userService.login({ email, password }).subscribe({
       next: () => {
         this.router.navigate(['/']);
       },
       error: (err) => {
-        console.log(err);
-      }
+        this.notCorectInputs = true;
+      },
     });
   }
-  
 }
-

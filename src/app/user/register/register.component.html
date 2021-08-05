@@ -3,11 +3,11 @@
         <i class="fab fa-pushed"></i>
         <h1>Art Quality</h1>
     </section>
-    <form class="register" [formGroup] = "form" (ngSubmit)="registerHandler()">
+    <form class="register" [formGroup]="form" (ngSubmit)="registerHandler()">
         <label for="firstName">
             <i class="far fa-user"></i>
-            <input formControlName="firstName"  type="text" name="firstName" id="firstName"
-                placeholder="First Name" [minlength]="3" required>
+            <input formControlName="firstName" type="text" name="firstName" id="firstName" placeholder="First Name"
+                [minlength]="3" required>
         </label>
         <ng-container *ngIf="form.get('firstName')?.touched">
             <p *ngIf="form.get('firstName')?.errors?.required" class="error">
@@ -19,7 +19,7 @@
         </ng-container>
         <label for="lastName">
             <i class="far fa-user"></i>
-            <input formControlName="lastName"  type="text" name="lastName" id="lastName" placeholder="Last Name" 
+            <input formControlName="lastName" type="text" name="lastName" id="lastName" placeholder="Last Name"
                 [minlength]="3" required>
         </label>
         <ng-container *ngIf="form.get('lastName')?.touched">
@@ -30,12 +30,16 @@
                 Last name must be at least 3 characters!
             </p>
         </ng-container>
-
         <label for="email">
             <i class="far fa-envelope-open"></i>
-            <input formControlName="email"  [appCustomValidator]="emailValidator" type="email" name="email" id="email"
+            <input formControlName="email" [appCustomValidator]="emailValidator" type="email" name="email" id="email"
                 placeholder="Email" required email>
         </label>
+        <ng-container *ngIf="emailIsTaken">
+            <p class="error">
+                Already have user with this email!
+            </p>
+        </ng-container>
         <ng-container *ngIf="form.get('email')?.touched">
             <p *ngIf="form.get('email')?.errors?.required" class="error">
                 Email is required!
@@ -46,7 +50,7 @@
         </ng-container>
         <label for="password">
             <i class="fas fa-lock"></i>
-            <input formControlName="password"  type="password" name="password" id="password" placeholder="Password"
+            <input formControlName="password" type="password" name="password" id="password" placeholder="Password"
                 [minlength]="4" required>
         </label>
         <ng-container *ngIf="form.get('password')?.touched">
@@ -59,8 +63,8 @@
         </ng-container>
         <label for="confirmPassword">
             <i class="fas fa-lock"></i>
-            <input formControlName="confirmPassword"  type="password" name="confirmPassword" id="confirmPassword" placeholder="confirmPassword"
-                [minlength]="4" required>
+            <input formControlName="confirmPassword" type="password" name="confirmPassword" id="confirmPassword"
+                placeholder="confirmPassword" [minlength]="4" required>
         </label>
         <ng-container *ngIf="form.get('confirmPassword')?.touched">
             <p *ngIf="form.get('confirmPassword')?.errors?.required" class="error">
@@ -71,9 +75,9 @@
             </p>
             <p *ngIf="form.get('confirmPassword')?.errors?.passwordDontMatch" class="error">
                 Repeat Password does not match password!
-              </p>
+            </p>
         </ng-container>
-       
+
         <button class="submit-btn">Submit</button>
     </form>
 

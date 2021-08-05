@@ -15,7 +15,7 @@ export class RegisterComponent implements OnDestroy{
   emailValidator = emailValidator;
   passwordDontMatch = passwordDontMatch;
   killSubscription = new Subject();
- 
+  emailIsTaken:boolean = false;
   form: FormGroup;
 
   constructor(
@@ -43,7 +43,7 @@ export class RegisterComponent implements OnDestroy{
         this.router.navigate(['/login']);
       },
       error: (err) => {
-        console.error(err);
+        this.emailIsTaken = true;
       }
     })
   }
