@@ -1,14 +1,21 @@
     <section class="course" *ngIf="course">
         <article class="course-desc">
             <h1>{{course.courseName}}</h1>
-            <p>{{course.description}}</p>
             <p> {{course.members}} already enrolled</p>
             <p>Weeks: {{course.weeks}}</p>
         </article>
         <button class="enroll" *ngIf="isLogged" (click)="addCourseToUser(course.id)">Enroll for free</button>
         <button class="enroll" *ngIf="!isLogged" routerLink="/login">Enroll for free</button>
     </section>
-
+    <section *ngIf="course" class="description">
+        <article class="desc">
+            <h3>Description</h3>
+            <p>{{course.description}}</p>
+        </article>
+        <aside class="course-image">
+            <img src={{course.imageUrl}} alt="">
+        </aside>
+    </section>
     <section class="specialization">
         <h2> How the Specialization Works</h2>
         <h3>Take Courses</h3>

@@ -9,14 +9,23 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  
+  max-height: 42vh;
 }
 
-.profile-image img {
+
+.profile-i  {
   width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 250px;
+  background-color: rgb(12, 39, 70);
+}
+.profile-i i{
+  font-size: 230px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 23px;
 }
 .user-info{
     font-size: 25px;

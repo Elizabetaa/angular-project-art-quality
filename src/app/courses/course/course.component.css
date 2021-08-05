@@ -1,6 +1,5 @@
 .course {
   height: 400px;
-  width: 100%;
   background: black;
   overflow: hidden;
   background: #c33764;
@@ -40,4 +39,24 @@
 }
 .specialization h2 {
   text-align: center;
+}
+
+.description {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;;
+}
+
+.desc{
+  flex-basis: 65%;
+}
+.course-image{
+  flex-basis: 30%;
+}
+.course-image img {
+   width: 100%;
 }

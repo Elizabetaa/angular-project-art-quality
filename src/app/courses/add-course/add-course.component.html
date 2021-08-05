@@ -6,23 +6,57 @@
     <form class="addCourse"  #form="ngForm" (ngSubmit)="addCourse(form)">
    
       <label for="courseName">
-        <input  #courseName="ngModel" ngModel  type="text" name="courseName" id="courseName" placeholder="Course Name" >
+        <input  #courseName="ngModel" ngModel  type="text" name="courseName" id="courseName" placeholder="Course Name" required minlength="5">
       </label>
-      
+      <ng-container *ngIf="courseName.touched">
+        <p *ngIf="courseName.errors?.required" class="error">
+          Name is required!
+        </p>
+        <p *ngIf="courseName.errors?.minlength" class="error">
+          Name must be at least 5 characters!
+        </p>
+      </ng-container>
       <label for="description">
-        <input  #description="ngModel" ngModel  type="text" name="description" id="description" placeholder="Course Description" >
+        <input  #description="ngModel" ngModel  type="text" name="description" id="description" placeholder="Course Description" required minlength="20">
       </label>
-      
+      <ng-container *ngIf="description.touched">
+        <p *ngIf="description.errors?.required" class="error">
+          Description is required!
+        </p>
+        <p *ngIf="description.errors?.minlength" class="error">
+          Description must be at least 20 characters!
+        </p>
+      </ng-container>
       <label for="imageUrl">
-        <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url" >
+        <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url" required minlength="10">
       </label>
-    
+      <ng-container *ngIf="imageUrl.touched">
+        <p *ngIf="imageUrl.errors?.required" class="error">
+          URL is required!
+        </p>
+        <p *ngIf="imageUrl.errors?.minlength" class="error">
+          URL must be at least 10 characters!
+        </p>
+      </ng-container>
       <label for="weeks">
-        <input  #weeks="ngModel" ngModel  type="number" name="weeks" id="weeks" placeholder="Weeks" >
+        <input  #weeks="ngModel" ngModel  type="number" name="weeks" id="weeks" placeholder="Weeks" required min="1">
       </label>
+      <ng-container *ngIf="weeks.touched">
+        <p *ngIf="weeks.errors?.required" class="error">
+          Weeks is required!
+        </p>
+        <p *ngIf="weeks.errors?.minlength" class="error">
+          Weeks must be minimum 1!
+        </p>
+      </ng-container>
       <label for="examDate">
-        <input #examDate="ngModel" ngModel   type="date" name="examDate" id="examDate" placeholder="Exam Date" >
+        <input #examDate="ngModel" ngModel   type="date" name="examDate" id="examDate" placeholder="Exam Date" required>
       </label>
+      <ng-container *ngIf="examDate.touched">
+        <p *ngIf="examDate.errors?.required" class="error">
+          Date is required!
+        </p>
+      </ng-container>
       <!-- <ng-container *ngIf="email.touched">
         <p *ngIf="email.errors?.required" class="error">
           Email is required!

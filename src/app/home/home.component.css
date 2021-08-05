@@ -7,6 +7,9 @@
   padding-top: 30px;
 }
 .image-banner img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
   border-radius: 400px;
 }
 

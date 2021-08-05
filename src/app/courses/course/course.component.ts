@@ -35,6 +35,6 @@ export class CourseComponent {
  
   addCourseToUser(id: number):void{
     this.http.post(`http://localhost:8080/users/addCourse/${id}`, this.userService.user?.email).subscribe();
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/courses']);
   }
 }
