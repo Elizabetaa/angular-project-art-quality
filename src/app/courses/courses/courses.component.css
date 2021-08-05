@@ -1,55 +1,60 @@
 .courses-banner {
-    height: 400px;
-    width: 100%;
-    background: black;
-    overflow: hidden;
-    background: #C33764; 
-    background: -webkit-linear-gradient(rgba(40, 81, 128, 0.9), rgba(195, 55, 100, 0.4)), url("../../../assets/art-history-course-banner.jpg");
-  }
-  
-  .courses-banner h1{
-      color: white;
-      font-size: 90px;
-      text-shadow: 4px 1px 4px rgb(233 234 243 / 44%);
-      margin: 66px 0 0 124px;
-      font-style: italic;
-  }
-  .courses {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 150px;
-    padding-top: 204px;
-  }
-  
-  .courses > a {
-    width: 20%;
-    margin: 20px;
-    text-decoration: none;
-    color: black;
-    box-shadow: 0px 0px 15px 5px grey;
-    border-radius: 5px;
-  }
-  .courses > a:hover{
-    box-shadow:0px 0px 15px 5px #285180;
-  }
-  .course-image img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  
-  .course-desc {
-    margin: 10px;
-  }
-  
-  .course-desc p {
-    color: gray;
-  }
-  .course-desc h1{
-    text-align: center;
-  }
+  height: 400px;
+  width: 100%;
+  background: black;
+  overflow: hidden;
+  background: #c33764;
+  background: url("../../../assets/banner.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.courses-banner h1 {
+  color: #cdd6da;
+  font-size: 90px;
+  text-shadow: 4px 1px 4px rgb(37, 91, 199 / 44%);
+  margin: 66px 0 0 124px;
+}
+.courses {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 150px;
+  padding-top: 204px;
+}
+
+.courses > a {
+  width: 30%;
+  margin: 20px;
+  height: 300px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0px 0px 15px 5px grey;
+  border-radius: 5px;
+  background-color: rgb(12, 39, 70);
+}
+.courses > a:hover {
+  box-shadow: 0px 0px 15px 5px #285180;
+}
+.course-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.course-desc {
+  margin: 10px;
+}
+
+.course-desc p {
+  color: #0b82a6;
+}
+.course-desc h1 {
+  text-align: center;
+  color: white;
+}

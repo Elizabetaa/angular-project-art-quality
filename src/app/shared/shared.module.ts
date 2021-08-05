@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CustomValidatorDirective } from './custom-validator.directive';
 
 
-
 @NgModule({
   declarations: [
     CustomValidatorDirective

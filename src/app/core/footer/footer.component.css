@@ -1,6 +1,6 @@
 .footer {
   margin-top: 50px;
-  background-color: rgb(40, 81, 128);
+  background-color: rgb(12 39 70);
   color: white;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
 }
 .menu ul {
   display: flex;
+  justify-content: center;
   padding-left: 0;
-  justify-content: space-between;
 }
 

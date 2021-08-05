@@ -39,7 +39,7 @@
     flex-basis: 50%;
     align-items: center;
     justify-content: center;
-    background-color: #285180;
+    background-color: rgb(12 39 70);
     color: white;
     font-size: 165px;
 }
@@ -47,7 +47,7 @@
     margin-top: 30px;
     padding: 12px 13px;
     width: 30%;
-    background-color: #285180;
+    background-color: rgb(12 39 70);
     color: white;
     border: none;
     border-radius: 5px;

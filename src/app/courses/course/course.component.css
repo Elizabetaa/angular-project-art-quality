@@ -1,34 +1,43 @@
-
-.course{
-    background-color: lightgray;
-    margin-top: 0;
-    padding: 80px 200px;
+.course {
+  height: 400px;
+  width: 100%;
+  background: black;
+  overflow: hidden;
+  background: #c33764;
+  background: url("../../../assets/banner.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 0;
+  padding: 80px 200px;
+  
 }
 
-.course-desc h1{
-    margin: 0;
-    font-size: 50px;
-    color: rgb(40, 81, 128);
+.course-desc h1 {
+  margin: 0;
+  font-size: 50px;
+  color: white;
 }
-.course-desc p{
-    font-size: 20px;
+.course-desc p {
+  font-size: 20px;
+  color: white;
 }
-.enroll{
-    margin-top: 40px;
-    padding: 30px 20px;
-    font-size: 30px;
-    background-color: rgb(40, 81, 128);
-    color: white;
-    border: none;
-    border-radius: 10px;
+.enroll {
+  margin-top: 40px;
+  padding: 30px 20px;
+  font-size: 30px;
+  background-color:rgb(18 64 101);
+  color: white;
+  border: none;
+  border-radius: 10px;
 }
 
-.specialization{
-    width: 80%;
-    margin: auto;
-    margin-top: 100px;
-    font-size: 20px;
+.specialization {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+  font-size: 20px;
 }
-.specialization h2{
-    text-align: center;
+.specialization h2 {
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 <section class="addCourse-form">
     <section class="addCourse-logo">
-      <i class="far fa-user"></i>
+      <i class="fab fa-pushed"></i>
+        <h1>Art Quality</h1>
     </section>
     <form class="addCourse"  #form="ngForm" (ngSubmit)="addCourse(form)">
    
@@ -15,7 +16,7 @@
       <label for="imageUrl">
         <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url" >
       </label>
-
+    
       <label for="weeks">
         <input  #weeks="ngModel" ngModel  type="number" name="weeks" id="weeks" placeholder="Weeks" >
       </label>
