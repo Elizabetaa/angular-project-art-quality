@@ -12,6 +12,10 @@ export class HeaderComponent {
     private userService: UserServiceService,
     private router: Router
   ) {}
+
+  get isAdmin(): boolean {
+    return this.userService.isAdmin;
+  }
   get email(): string {
     return this.userService.user?.email || '';
   }

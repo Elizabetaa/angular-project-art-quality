@@ -14,6 +14,9 @@ export class UserServiceService {
   constructor(
     private http: HttpClient,
   ) {}
+  get isAdmin():boolean{
+    return this.user?.userRole == "admin";
+  }
   get isLogged(): boolean {
     return !!this.user;
   }

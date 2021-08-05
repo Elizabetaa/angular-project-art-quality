@@ -19,13 +19,16 @@
     margin-top: 0;
     color: rgb(40, 81, 128);
 }
+.edit-btn {
+  margin-top: 70px;
 
-.edit-btn{
-    margin-top: 70px;
+}
+.edit-btn a{
+  text-decoration: none;
     background-color: rgb(40, 81, 128);
     padding: 16px 92px;
     border: none;
+    font-size: 30px;
     border-radius: 5px;
     color: white;
-    width: 10%;
 }

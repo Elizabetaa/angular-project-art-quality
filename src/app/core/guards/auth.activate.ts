@@ -27,7 +27,10 @@ export class AuthActivate implements CanActivate {
     });
   }
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot):| boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    const { authenticationRequired, authenticationFailureRedirectUrl } = route.data;
+    const { authenticationRequired, authenticationFailureRedirectUrl, isAdmin } = route.data;
+    if( typeof isAdmin === 'boolean' && this.userService.isAdmin){
+      return true;
+    }
     if (
       typeof authenticationRequired === 'boolean' &&
       this.isLogged
