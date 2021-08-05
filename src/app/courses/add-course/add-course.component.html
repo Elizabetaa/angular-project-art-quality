@@ -1,0 +1,38 @@
+<section class="addCourse-form">
+    <section class="addCourse-logo">
+      <i class="far fa-user"></i>
+    </section>
+    <form class="addCourse"  #form="ngForm" (ngSubmit)="addCourse(form)">
+   
+      <label for="courseName">
+        <input  #courseName="ngModel" ngModel  type="text" name="courseName" id="courseName" placeholder="Course Name" >
+      </label>
+      
+      <label for="description">
+        <input  #description="ngModel" ngModel  type="text" name="description" id="description" placeholder="Course Description" >
+      </label>
+      
+      <label for="imageUrl">
+        <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url" >
+      </label>
+
+      <label for="weeks">
+        <input  #weeks="ngModel" ngModel  type="number" name="weeks" id="weeks" placeholder="Weeks" >
+      </label>
+      <label for="examDate">
+        <input #examDate="ngModel" ngModel   type="date" name="examDate" id="examDate" placeholder="Exam Date" >
+      </label>
+      <!-- <ng-container *ngIf="email.touched">
+        <p *ngIf="email.errors?.required" class="error">
+          Email is required!
+        </p>
+        <p *ngIf="email.errors?.invalidEmail" class="error">
+          Email is not valid!
+        </p>
+      </ng-container> -->
+   
+     
+      <button class="submit-btn">Submit</button>
+    </form>
+  
+  </section>

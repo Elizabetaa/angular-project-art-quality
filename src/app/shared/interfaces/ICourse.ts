@@ -5,4 +5,5 @@ export interface ICourse {
   weeks: number;
   description: string;
   imageUrl: string;
+  examDate: Date
 }

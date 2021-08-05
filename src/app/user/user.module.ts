@@ -21,7 +21,6 @@ import { UserServiceService } from './user-service.service';
     UserRoutingModule,
     FormsModule,
     SharedModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   providers: [

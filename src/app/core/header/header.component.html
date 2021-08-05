@@ -14,7 +14,9 @@
             <li>
                 <a routerLink="/courses">Courses</a>
             </li>
-
+            <li *ngIf="isLogged">
+                <a routerLink="/addCourse">Add Course</a>
+            </li>
             <li *ngIf="!isLogged">
                 <a routerLink="/login">Login</a>
             </li>

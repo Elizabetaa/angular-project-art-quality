@@ -21,4 +21,13 @@ export class CourseServiceService {
   loadMyCourses(email: string){
     return this.http.get<ICourse[]>(`http://localhost:8080/users/getMyCourses/${email}` );
   }
+  addCourse(courseData: {  courseName:string,  weeks:number,  description:string,  imageUrl:string,  examDate:Date}) {
+    return this.http
+      .post(
+        `http://localhost:8080/courses/addCourse`,
+        JSON.stringify(courseData)
+      );
+  }
+
+ 
 }
