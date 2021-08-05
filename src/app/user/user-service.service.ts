@@ -11,12 +11,12 @@ import { NgForm } from '@angular/forms';
 export class UserServiceService {
   user: IUser | null | undefined = undefined;
 
-  get isLogged(): boolean {
-    return !!this.user;
-  }
   constructor(
     private http: HttpClient,
   ) {}
+  get isLogged(): boolean {
+    return !!this.user;
+  }
   login(userData: { email: string; password: string }) {
     return this.http
       .post<IUser>(

@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Form, NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { emailValidator } from 'src/app/shared/validators';
 import { UserServiceService } from '../user-service.service';
 
@@ -16,9 +15,7 @@ export class LoginComponent {
 
   constructor(
     private userService: UserServiceService,
-    private activatedRoute: ActivatedRoute,
     private router: Router,
-    private http: HttpClient
   ) {}
 
   loginHandler(form: NgForm): void {
@@ -36,3 +33,4 @@ export class LoginComponent {
     });
   }
 }
+// (courses) => (this.courses = courses)

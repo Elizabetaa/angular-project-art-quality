@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserServiceService } from './user-service.service';
 
 
 
@@ -22,6 +23,9 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    UserServiceService
   ]
 })
 export class UserModule { }
