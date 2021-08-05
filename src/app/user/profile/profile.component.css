@@ -1,5 +1,7 @@
 
 .profile {
+  margin-top: 150px;
+  margin-left: 100px;
   display: flex;
   width: 60%;
   justify-content: space-between;

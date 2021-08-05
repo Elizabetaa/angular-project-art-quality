@@ -7,7 +7,6 @@ import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
 import { CoursesComponent } from './courses/courses/courses.component';
-import { BooksComponent } from './books/books.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserRoutingModule } from './user/user-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +18,6 @@ import { CourseModule } from './courses/course.module';
     AppComponent,
     HomeComponent,
     CoursesComponent,
-    BooksComponent,
     NotFoundComponent,
     CourseComponent
   ],
