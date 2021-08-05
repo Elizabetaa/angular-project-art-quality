@@ -1,15 +1,31 @@
-<section class="profile">
-    <article class="profile-image">
-        <img src="https://profile-images.xing.com/images/61f4917cb416a40aec5d60efb36813bb-2/melissa-peters.1024x1024.jpg"
-            alt="">
-    </article>
-    <article class="user-info">
-        <p>First Name: {{user.firstName}} </p>
-        <p>Last Name: {{user.lastName}}</p>
-        <p>Email: {{user.email}}</p>
-        <p>Active Courese: 2</p>
-        <!-- <article class="edit-btn">
-            <a href="">Edit</a>
-        </article> -->
-    </article>
-</section>
+
+<article class="profile-page">
+    <section class="profile">
+        <article class="profile-image">
+            <img src="https://profile-images.xing.com/images/61f4917cb416a40aec5d60efb36813bb-2/melissa-peters.1024x1024.jpg"
+                alt="">
+        </article>
+        <article class="user-info">
+            <p>{{user.firstName}} {{user.lastName}}</p>
+            <!-- <article class="edit-btn">
+                <a href="">Edit</a>
+            </article> -->
+        </article>
+    </section>
+    <section class="courses">
+        <section class="courses-banner">
+            <h1>My Courses</h1>
+        </section>
+        <a href=""  *ngFor="let course of courses">
+            <section class="course">
+                <article class="course-image">
+                    <img src={{course.imageUrl}} alt="">
+                </article>
+                <article class="course-desc">
+                    <h1>{{course.courseName}}</h1>
+                    <p>Weeks: {{course.weeks}}</p>
+                </article>
+            </section>
+        </a>
+    </section>
+</article>

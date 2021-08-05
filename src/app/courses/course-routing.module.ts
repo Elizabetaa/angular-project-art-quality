@@ -4,7 +4,6 @@ import { AuthActivate } from '../core/guards/auth.activate';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesComponent } from './courses/courses.component';
-import { MyCoursesComponent } from './my-courses/my-courses.component';
 
 const routes: Routes = [
   {
@@ -19,10 +18,6 @@ const routes: Routes = [
         component: CourseComponent
       },
     ]
-  },
-  {
-    path: 'myCourse',
-    component: MyCoursesComponent,
   },
   {
     path: 'addCourse',

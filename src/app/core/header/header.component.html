@@ -24,9 +24,6 @@
                 <a routerLink="/profile">Profile</a>
             </li>
             <li *ngIf="isLogged">
-                <a routerLink="/myCourse">My Courses</a>
-            </li>
-            <li *ngIf="isLogged">
                 <a href="" (click)="logout()">Logout</a>
             </li>
         </ul>
