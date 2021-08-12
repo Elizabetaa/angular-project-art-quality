@@ -7,21 +7,21 @@ import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
   {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: [AuthActivate],
-    data: {
-      authenticationRequired : false,
-      authenticationFailureRedirectUrl: '/'
-    }
-  },
-  {
     path: 'login',
     component: LoginComponent,
     canActivate: [AuthActivate],
     data: {
-      authenticationRequired : false,
-      authenticationFailureRedirectUrl: '/'
+      authenticationRequired: false,
+      authenticationFailureRedirectUrl: '/',
+    }
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [AuthActivate],
+    data: {
+      authenticationRequired: false,
+      authenticationFailureRedirectUrl: '/',
     }
   },
   {
@@ -29,10 +29,10 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthActivate],
     data: {
-      authenticationRequired : true,
-      authenticationFailureRedirectUrl: '/'
+      authenticationRequired: true,
+      authenticationFailureRedirectUrl: '/login',
     }
-  },
+  }
 ];
 
 @NgModule({

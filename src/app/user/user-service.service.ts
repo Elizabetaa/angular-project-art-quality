@@ -1,19 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { LocalStorage } from '../core/injection-token';
 import { IUser } from '../shared/interfaces/IUser';
 import { tap } from 'rxjs/operators';
-import { NgForm } from '@angular/forms';
-
+import { Inject, Injectable } from '@angular/core';
+import { LocalStorage } from '../core/injection-token';
 @Injectable({
   providedIn: 'root',
 })
 export class UserServiceService {
   user: IUser | null | undefined = undefined;
 
-  constructor(
-    private http: HttpClient,
-  ) {}
+  constructor(private http: HttpClient,
+    ) {}
+
   get isAdmin():boolean{
     return this.user?.userRole == "admin";
   }

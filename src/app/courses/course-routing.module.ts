@@ -24,7 +24,7 @@ const routes: Routes = [
     component: AddCourseComponent,
     canActivate: [AuthActivate],
     data: {
-      isAdmin : false,
+      isAdmin : true,
       authenticationFailureRedirectUrl: '/'
     }
   },

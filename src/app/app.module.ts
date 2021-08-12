@@ -18,18 +18,18 @@ import { CourseModule } from './courses/course.module';
     AppComponent,
     HomeComponent,
     CoursesComponent,
+    CourseComponent,
     NotFoundComponent,
-    CourseComponent
   ],
   imports: [
     BrowserModule,
     CoreModule,
     UserModule,
-    UserRoutingModule,
     HttpClientModule,
     FormsModule,
     CourseModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,11 @@ import { UserServiceService } from './user/user-service.service';
 })
 export class AppComponent {
   title = 'art-quality-angular-project';
+
+  get isAuthenticating(): boolean {
+    return this.userService.user === undefined;
+  }
+  
   constructor(
     private userService:UserServiceService,
   ){

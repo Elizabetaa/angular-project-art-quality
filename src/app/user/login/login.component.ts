@@ -25,7 +25,7 @@ export class LoginComponent {
     const { email, password } = form.value;
     this.userService.login({ email, password }).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile']);
       },
       error: (err) => {
         this.notCorectInputs = true;
@@ -33,4 +33,3 @@ export class LoginComponent {
     });
   }
 }
-// (courses) => (this.courses = courses)
