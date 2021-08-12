@@ -9,7 +9,7 @@ import { UserServiceService } from '../user-service.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent  {
+export class ProfileComponent {
   courses: ICourse[] | undefined;
   constructor(
     private userService: UserServiceService,
@@ -24,9 +24,16 @@ export class ProfileComponent  {
       .loadMyCourses(this.userService.user?.email!)
       .subscribe((courses) => (this.courses = courses));
   }
-  
-
- get user(): IUser {
-   return this.userService.user!;
+  haveCourses(): boolean {
+    console.log(this.courses == undefined);
+    if (this.courses != undefined) {
+      if (this.courses.length == 0) {
+        return false;
+      }
+    }
+    return this.courses !== undefined;
+  }
+  get user(): IUser {
+    return this.userService.user!;
   }
 }

@@ -1,7 +1,6 @@
     <section class="course" *ngIf="course">
         <article class="course-desc">
             <h1>{{course.courseName}}</h1>
-            <p> {{course.members}} already enrolled</p>
             <p>Weeks: {{course.weeks}}</p>
         </article>
         <button class="enroll" *ngIf="isLogged" (click)="addCourseToUser(course.id)">Enroll for free</button>

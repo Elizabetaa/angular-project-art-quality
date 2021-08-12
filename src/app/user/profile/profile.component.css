@@ -96,3 +96,29 @@
 .profile-page{
   min-height: 80vh ;
 }
+
+.empty-courses-array{
+  min-height: 400px;
+  min-width: 100%;
+  background-color: rgb(243, 243, 243);
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.empty-courses-array h2{
+  text-align: center;
+}
+
+.empty-courses-array a{
+  text-decoration: none;
+  font-style: normal;
+  background-color: rgb(12, 39, 70);
+  color: white;
+  padding: 20px 65px;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 0px gray;
+}
