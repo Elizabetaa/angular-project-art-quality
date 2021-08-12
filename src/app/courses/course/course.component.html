@@ -1,4 +1,7 @@
-    <section class="course" *ngIf="course">
+<div *ngIf="!course" class="loading">
+    <p>Loading...</p>
+</div>
+   <section class="course" *ngIf="course">
         <article class="course-desc">
             <h1>{{course.courseName}}</h1>
             <p>Weeks: {{course.weeks}}</p>

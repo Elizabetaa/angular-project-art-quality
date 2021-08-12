@@ -25,7 +25,6 @@ export class ProfileComponent {
       .subscribe((courses) => (this.courses = courses));
   }
   haveCourses(): boolean {
-    console.log(this.courses == undefined);
     if (this.courses != undefined) {
       if (this.courses.length == 0) {
         return false;

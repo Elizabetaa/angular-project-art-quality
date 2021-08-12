@@ -98,6 +98,7 @@
 }
 
 .empty-courses-array{
+  margin-top: 100px;
   min-height: 400px;
   min-width: 100%;
   background-color: rgb(243, 243, 243);

@@ -1,6 +1,9 @@
 <section class="courses-banner">
     <h1>Art History Courses</h1>
 </section>
+<div *ngIf="!courses" class="loading">
+    <p>Loading...</p>
+</div>
 <section class="courses">
     <a href="" *ngFor="let course of courses" [routerLink]="['/courses',course.id]">
         <section class="course">
