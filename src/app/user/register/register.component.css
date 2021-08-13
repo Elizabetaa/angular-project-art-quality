@@ -58,3 +58,14 @@
   font-size: 18px;
   border: 2px solid;
 }
+
+@media all and (max-width: 1100px) {
+  .register-form {
+    display: block;
+    width: 80%;
+  }
+  .register-logo{
+    padding: 20px;
+  }
+
+}

@@ -58,3 +58,40 @@
   text-align: center;
   color: white;
 }
+@media all and (max-width: 500px) {
+  .mtovation
+    .image
+    img {
+    width: 250px;
+  }
+}
+@media  screen  and (max-width: 800px) {
+    .courses >a {
+        width: 80%;
+    }
+  }
+
+
+  @media all and (max-width: 1000px) {
+
+    .courses {
+      justify-content: center;
+    }
+
+    .courses-banner h1{
+      font-size: 2.5em;
+    }
+  
+  }
+  @media all and (max-width: 500px) {
+
+    .courses {
+        padding-top: 0;
+    }
+    .courses-banner{
+      height: 200px;
+    }
+    .courses-banner h1{
+      font-size: 1.8em;
+    }
+  }

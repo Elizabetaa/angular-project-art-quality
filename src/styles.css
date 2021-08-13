@@ -1,32 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
 
+html,
+body {
+  margin: 0;
+  font-family: Roboto;
+  min-height: 100vh;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.15.3/css/all.css');
+main {
+  position: relative;
+  min-height: 65vh;
+}
 
-html,body{
-    margin: 0;
-    font-family: Roboto;
-    min-height: 100vh;
+.error {
+  color: #ce4c4c;
+  font-style: italic;
+  font-weight: bold;
+  background-color: rgb(12, 39, 70);
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.loading {
+  font-size: 50px;
+  text-align: center;
+  color: rgb(12, 39, 70);
 }
 
 
-main{
-    position: relative;
-    min-height: 63.8vh;
-}
 
-.error{
-    color: #ce4c4c;;
-    font-style: italic;
-    font-weight: bold;
-    background-color: rgb(12, 39, 70);
-    padding: 8px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.loading{
-    font-size: 50px;
-    text-align: center;
-    color: rgb(12, 39, 70);
-}
