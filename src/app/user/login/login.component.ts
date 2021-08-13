@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LocalStorage } from 'src/app/core/injection-token';
 import { emailValidator } from 'src/app/shared/validators';
 import { UserServiceService } from '../user-service.service';
 
@@ -16,6 +17,7 @@ export class LoginComponent {
   constructor(
     private userService: UserServiceService,
     private router: Router,
+    @Inject(LocalStorage) private localStorage: Window['localStorage']
   ) {}
 
   loginHandler(form: NgForm): void {
@@ -26,6 +28,7 @@ export class LoginComponent {
     this.userService.login({ email, password }).subscribe({
       next: () => {
         this.router.navigate(['/profile']);
+        this.localStorage.setItem('<USER>',JSON.stringify(this.userService.user));
       },
       error: (err) => {
         this.notCorectInputs = true;

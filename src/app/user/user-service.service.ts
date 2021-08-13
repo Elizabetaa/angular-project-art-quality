@@ -10,7 +10,15 @@ export class UserServiceService {
   user: IUser | null | undefined = undefined;
 
   constructor(private http: HttpClient,
-    ) {}
+    @Inject(LocalStorage) private localStorage: Window['localStorage']
+    ) {
+      try {
+        const localStorageUser = this.localStorage.getItem('<USER>') || 'ERROR';
+        this.user = JSON.parse(localStorageUser);
+      } catch {
+        this.user = undefined;
+      }
+    }
 
   get isAdmin():boolean{
     return this.user?.userRole == "admin";
@@ -23,10 +31,11 @@ export class UserServiceService {
       .post<IUser>(
         `http://localhost:8080/users/login`,
         JSON.stringify(userData)
-      ).pipe(tap((user) => this.user = user ));
+      ).pipe(tap((user) => this.user = user,));
   }
 
   logout() {
+    this.localStorage.removeItem('<USER>')
     return this.http.post<IUser>(`http://localhost:8080/users/logout`, {}).pipe(
       tap(() => this.user = null)
     );
