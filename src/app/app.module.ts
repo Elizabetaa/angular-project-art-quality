@@ -12,6 +12,7 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { FormsModule } from '@angular/forms';
 import { CourseComponent } from './courses/course/course.component';
 import { CourseModule } from './courses/course.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CourseModule } from './courses/course.module';
     FormsModule,
     CourseModule,
     AppRoutingModule,
-    UserRoutingModule
+    UserRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
