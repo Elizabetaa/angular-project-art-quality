@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserServiceService } from './user-service.service';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 
@@ -15,6 +16,7 @@ import { UserServiceService } from './user-service.service';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
+    EditProfileComponent,
   ],
   imports: [
     CommonModule,

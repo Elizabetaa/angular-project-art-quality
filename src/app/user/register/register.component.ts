@@ -27,7 +27,6 @@ export class RegisterComponent implements OnDestroy{
       firstName: ['', [Validators.required, Validators.minLength(4)]],
       lastName: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, emailValidator]],
-      tel: [''],
       password: ['', [Validators.required, Validators.minLength(4)]],
       confirmPassword: ['', [Validators.required, passwordDontMatch(
         () => this.form?.get('password'), this.killSubscription

@@ -7,6 +7,9 @@
         <article class="user-info">
             <p>{{user.firstName}} {{user.lastName}}</p>
         </article>
+        <article class="edit-btn">
+            <a routerLink="/edit">Edit</a>
+        </article>
     </section>
     <section class="courses">
         <section class="courses-banner" *ngIf="haveCourses()">

@@ -9,7 +9,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  max-height: 60vh;
+  max-height: 45vh;
 }
 
 
@@ -35,13 +35,10 @@
     text-align: center;
     color: rgb(40, 81, 128);
 }
-.edit-btn {
-  margin-top: 70px;
 
-}
 .edit-btn a{
   text-decoration: none;
-    background-color: rgb(40, 81, 128);
+    background-color: rgb(12, 39, 70);
     padding: 16px 92px;
     border: none;
     font-size: 30px;

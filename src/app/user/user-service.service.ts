@@ -54,4 +54,13 @@ export class UserServiceService {
       tap((user) => this.user = user)
     )
   }
+
+ 
+  editProfile(userData: { firstName: string, lastName:string , image:File,  oldPassword:string, newPassword:string, confirmPassword:string}) {
+    return this.http
+      .post<IUser>(
+        `http://localhost:8080/users/editProfile`,
+        JSON.stringify(userData)
+      ).pipe(tap((user) => this.user = user,));
+  }
 }

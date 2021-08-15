@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthActivate } from '../core/guards/auth.activate';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,15 @@ const routes: Routes = [
     data: {
       authenticationRequired: true,
       authenticationFailureRedirectUrl: '/login',
+    }
+  },
+  {
+    path: 'edit',
+    component: EditProfileComponent,
+    canActivate: [AuthActivate],
+    data: {
+      authenticationRequired: true,
+      authenticationFailureRedirectUrl: '/edit',
     }
   }
 ];

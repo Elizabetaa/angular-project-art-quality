@@ -1,0 +1,84 @@
+<section class="signIn-form">
+    <section class="signIn-logo">
+      <i class="far fa-user"></i>
+    </section>
+    <form class="signIn" [formGroup]="form" (ngSubmit)="editProfile()">
+      <label for="firstName">
+          <i class="far fa-user"></i>
+          <input formControlName="firstName" type="text" name="firstName" id="firstName" placeholder="First Name"
+              [minlength]="3" required>
+      </label>
+      <ng-container *ngIf="form.get('firstName')?.touched">
+          <p *ngIf="form.get('firstName')?.errors?.required" class="error">
+              First name is required!
+          </p>
+          <p *ngIf="form.get('firstName')?.errors?.minlength" class="error">
+              First name must be at least 3 characters!
+          </p>
+      </ng-container>
+      <label for="lastName">
+          <i class="far fa-user"></i>
+          <input formControlName="lastName" type="text" name="lastName" id="lastName" placeholder="Last Name"
+              [minlength]="3" required>
+      </label>
+      <ng-container *ngIf="form.get('lastName')?.touched">
+          <p *ngIf="form.get('lastName')?.errors?.required" class="error">
+              Last name is required!
+          </p>
+          <p *ngIf="form.get('lastName')?.errors?.minlength" class="error">
+              Last name must be at least 3 characters!
+          </p>
+      </ng-container>
+    
+     
+      <label for="oldPassword">
+          <i class="fas fa-lock"></i>
+          <input formControlName="oldPassword" type="oldPassword" name="oldPassword" id="oldPassword" placeholder="Old Password"
+              [minlength]="4" required>
+      </label>
+      <ng-container *ngIf="passwordIsIncorrect">
+        <p class="error">
+            Incorrect Password!
+        </p>
+    </ng-container>
+      <ng-container *ngIf="form.get('oldPassword')?.touched">
+          <p *ngIf="form.get('oldPassword')?.errors?.required" class="error">
+              Password is required!
+          </p>
+          <p *ngIf="form.get('oldPassword')?.errors?.minlength" class="error">
+              Password must be at least 4 characters!
+          </p>
+      </ng-container>
+      <label for="newPassword">
+        <i class="fas fa-lock"></i>
+        <input formControlName="newPassword" type="newPassword" name="newPassword" id="newPassword" placeholder="New Password"
+            [minlength]="4" required>
+    </label>
+    <ng-container *ngIf="form.get('newPassword')?.touched">
+        <p *ngIf="form.get('newPassword')?.errors?.required" class="error">
+            Password is required!
+        </p>
+        <p *ngIf="form.get('newPassword')?.errors?.minlength" class="error">
+            Password must be at least 4 characters!
+        </p>
+    </ng-container>
+      <label for="confirmPassword">
+          <i class="fas fa-lock"></i>
+          <input formControlName="confirmPassword" type="password" name="confirmPassword" id="confirmPassword"
+              placeholder="confirmPassword" [minlength]="4" required>
+      </label>
+      <ng-container *ngIf="form.get('confirmPassword')?.touched">
+          <p *ngIf="form.get('confirmPassword')?.errors?.required" class="error">
+              Password is required!
+          </p>
+          <p *ngIf="form.get('confirmPassword')?.errors?.minlength" class="error">
+              Password must be at least 4 characters!
+          </p>
+          <p *ngIf="form.get('confirmPassword')?.errors?.passwordDontMatch" class="error">
+             Password does not match password!
+        </p>
+      </ng-container>
+
+      <button class="submit-btn">Submit</button>
+  </form>
+  </section>
