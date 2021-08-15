@@ -18,6 +18,26 @@ export class ProfileComponent {
   ) {
     this.getCoursesByUser();
   }
+  isAllInThePast( allCourses: ICourse[]): boolean {
+   for (let index = 0; index < allCourses.length; index++) {
+    var now = +new Date();
+    var exam = +new Date(allCourses[index].examDate);
+    if( exam > now){
+      return false;
+    }
+   }
+  
+    return true;
+  }
+
+  isInThePast(course: ICourse): boolean {
+    var now = +new Date();
+
+    var exam = +new Date(course.examDate);
+
+    let isInPast = exam < now;
+    return isInPast;
+  }
 
   getCoursesByUser() {
     this.courseService

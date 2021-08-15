@@ -4,16 +4,22 @@
 <div *ngIf="!courses" class="loading">
     <p>Loading...</p>
 </div>
-<section class="courses" >
-    <a href="" *ngFor="let course of courses" [routerLink]="['/courses',course.id]" >
-        <section class="course">
-            <article class="course-image">
-                <img src={{course.imageUrl}} alt="">
-            </article>
-            <article class="course-desc">
-                <h1>{{course.courseName}}</h1>
-                <p>Weeks: {{course.weeks}}</p>
-            </article>
-        </section>
-    </a>
+<a href="">
+    <section></section>
+</a>
+<section class="allCourses">
+    <section class="courses" *ngFor="let course of courses">
+        <a href="" *ngIf="!isInThePast(course)"  [routerLink]="['/courses',course.id]">
+            <section class="course">
+                <article class="course-image">
+                    <img src={{course.imageUrl}} alt="">
+                </article>
+                <article class="course-desc">
+                    <h1>{{course.courseName}}</h1>
+                    <p>Weeks: {{course.weeks}}</p>
+                </article>
+            </section>
+        </a>
+    </section> 
 </section>
+       

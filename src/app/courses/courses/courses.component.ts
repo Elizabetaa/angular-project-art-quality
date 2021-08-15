@@ -7,13 +7,25 @@ import { CourseServiceService } from '../course-service.service';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
 })
-export class CoursesComponent  {
-  courses:ICourse[] | undefined;
+export class CoursesComponent {
+  courses: ICourse[] | undefined;
   show = false;
-  constructor(private courseService: CourseServiceService) { 
+  constructor(private courseService: CourseServiceService) {
     this.fetchCourses();
   }
-  fetchCourses(){
-    this.courseService.loadCourses().subscribe(courses => this.courses = courses);
+
+  isInThePast(course: ICourse): boolean {
+    var now = +new Date();
+
+    var exam = +new Date(course.examDate);
+
+    let isInPast = exam < now;
+    return isInPast;
+  }
+
+  fetchCourses() {
+    this.courseService
+      .loadCourses()
+      .subscribe((courses) => (this.courses = courses));
   }
 }

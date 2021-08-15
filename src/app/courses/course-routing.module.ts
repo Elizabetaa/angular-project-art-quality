@@ -4,6 +4,7 @@ import { AuthActivate } from '../core/guards/auth.activate';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesComponent } from './courses/courses.component';
+import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,20 @@ const routes: Routes = [
       authenticationFailureRedirectUrl: '/'
     }
   },
+  {
+    path: 'enrolledCourse',
+    children: [
+      {
+        path: '',
+        component: EnrolledCourseComponent
+      },
+      {
+        path: ':courseId',
+        component: EnrolledCourseComponent
+      },
+    ]
+  },
+  
 ];
 
 @NgModule({

@@ -15,24 +15,33 @@
         <section class="courses-banner" *ngIf="haveCourses()">
             <h1>My Courses</h1>
         </section>
-        <section *ngIf="!haveCourses() && courses" class="empty-courses-array">
+        <ng-container *ngIf=" courses && isAllInThePast(courses)">
+            <section class="empty-courses-array">
+                <h2>You don't enrolled for course!</h2>
+                <a routerLink="/courses" >Courses</a>
+            </section>
+        </ng-container>
+        <section *ngIf="!haveCourses() && courses && !isAllInThePast(courses)" class="empty-courses-array">
             <h2>You don't enrolled for course!</h2>
             <a routerLink="/courses" >Courses</a>
         </section>
-        <a href="" *ngFor="let course of courses">
-            <section class="course">
-                <article class="course-image">
-                    <img src={{course.imageUrl}} alt="">
-                </article>
-                <article class="course-desc">
-                    <h1>{{course.courseName}}</h1>
-                    <p>Weeks: {{course.weeks}}</p>
-                </article>
-            </section>
-        </a>
+        <section class="allCourses" *ngFor="let course of courses">
+                <a href="" *ngIf="!isInThePast(course)"  [routerLink]="['/enrolledCourse',course.id]">
+                    <section class="course">
+                        <article class="course-image">
+                            <img src={{course.imageUrl}} alt="">
+                        </article>
+                        <article class="course-desc">
+                            <h1>{{course.courseName}}</h1>
+                            <p>Weeks: {{course.weeks}}</p>
+                        </article>
+                    </section>
+                </a>
+        </section>
         <div *ngIf="!courses" class="loading">
             <p>Loading...</p>
         </div>
     </section>
    
 </article>
+

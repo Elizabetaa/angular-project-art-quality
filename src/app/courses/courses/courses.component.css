@@ -16,18 +16,20 @@
   text-shadow: 4px 1px 4px rgb(37, 91, 199 / 44%);
   margin: 66px 0 0 124px;
 }
-.courses {
+.allCourses{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-bottom: 150px;
-  padding-top: 204px;
+  justify-content: center;
+  padding-top: 70px;
 }
-
-.courses > a {
-  width: 30%;
+.courses {
+  display: flex;
+}
+.courses >  a {
+  width: 400px;
   margin: 20px;
   height: 350px;
   text-decoration: none;
